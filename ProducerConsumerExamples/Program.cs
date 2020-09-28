@@ -3,6 +3,11 @@ using System.Threading;
 
 namespace ProducerConsumerExamples
 {
+    /// <summary>
+    /// Примеры реализации паттерна producer / consumer
+    ///
+    /// https://michaelscodingspot.com/c-job-queues/
+    /// </summary>
     class Program
     {
         public static void NaiveQueueStart()
