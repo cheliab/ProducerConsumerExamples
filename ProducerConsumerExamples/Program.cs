@@ -68,12 +68,25 @@ namespace ProducerConsumerExamples
         
         static void Main(string[] args)
         {
-            // NaiveQueueStart();
-            // BitBetterQueueStart();
-            // BlockingCollectionQueueStart();
+            //NaiveQueueStart();
+            //BitBetterQueueStart();
+            //BlockingCollectionQueueStart();
+            //MultiThreadQueueStart();
+
+            var queue = new JobQueue(2);
             
-            MultiThreadQueueStart();
-            
+            queue.Enqueue("1");
+            queue.Enqueue("2");
+            queue.Enqueue("3");
+            queue.Enqueue("4");
+
+            while (true)
+            {
+                queue.SetJobsState();
+                
+                Thread.Sleep(1000);
+            }
+
             Console.ReadLine();
         }
     }
